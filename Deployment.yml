@@ -1,19 +1,19 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-   name: mrdevops
+   name: pipdeploy
 spec:
    replicas: 2
    selector:      # tells the controller which pods to watch/belong to
     matchLabels:
-     app: mrdevops
+     app: pipdeploy
    template:
       metadata:
         labels:
-          app: mrdevops
+          app: pipdeploy
       spec:
        containers:
-        - name: mrdevops
+        - name: pipdeploy
           image: mehdibrahim/devops-integration
           imagePullPolicy: Always
           ports:
